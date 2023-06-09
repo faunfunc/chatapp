@@ -1,6 +1,6 @@
 # ChatApp
 
-ChatApp is a web-based chat application that allows users to communicate with each other in real-time.
+convo is a web-based php chat application that allows users to communicate with each other in real-time.
 
 ## Features
 
