@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=PT+Sans&family=Roboto&display=swap');
+/* font-family: 'Roboto', sans-serif;
+font-family: 'PT Sans', sans-serif
+font-family: 'Caveat', cursive;
+;
+*/
+
+/* || RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || VARIABLES */
+:root {
+    /* background colors */
+    --BGCOLOR1: #cfdbe5d8;
+    --BGCOLOR2: #5a6f7f;
+    --BGCOLOR3: #16181b;
+    /* foreground colors */
+    --FGCOLOR1: #5cc2ac;
+    --FGCOLOR2: #31675b;
+    --FGCOLOR3: #21463e;
+    --FGCOLOR4: #97d5c8;
+    /* misc colors */
+    --ERRORCOLOR1: #f00;
+    --ACTIVE: #0f0;
+    /* font-family */
+    --FF1: 'Roboto', sans-serif;
+    --FF2: 'PT Sans', sans-serif;
+    --FF3: 'Caveat', cursive;
+    /* font-size */
+    --FONTSM: 20px;
+    --FONTSMx: 28px;
+    --FONTM: 40px;
+    --FONTL: 60px;
+    /* spacing */
+    --PADDINGSM: 10px;
+    --PADDINGM: 20px;
+    --PADDINGL: 300px;
+    /* text-shadows */
+    --TXTSHADOW1: 2px 2px 2px rgb(75, 83, 85);
+    --TXTSHADOW2: 1px 1px 2px #333;
+    --TXTSHADOW3: 1px 1px 2px #000;
+}
+
+/* || UTILITIES */
+
+/* || GENERAL STYLES */
+
+body {
+    font-family: var(--FF1);
+    background-color: var(--BGCOLOR2);
+}
+
+.signup-body {
+    background-image: linear-gradient(to bottom right, var(--BGCOLOR1), var(--BGCOLOR2));
+}
+
+.welcome-text {
+    font-family: var(--FF2);
+    color: white;
+}
+
+.welcome-text, h1 {
+    text-shadow: var(--TXTSHADOW1);
+}
+
+.slogan {
+    font-family: var(--FF3);
+    font-size: var(--FONTSMx);
+}
+
+.reg-btn {
+    background-color: var(--FGCOLOR4);
+}
+
+.btn-outline-success{
+    border: none;
+}
+.btn-outline-success:hover{
+    background-color: var(--FGCOLOR2);
+}
