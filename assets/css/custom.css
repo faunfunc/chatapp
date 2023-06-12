@@ -82,3 +82,32 @@ body {
 .btn-outline-success:hover{
     background-color: var(--FGCOLOR2);
 }
+
+.pfp {
+    position: relative;
+}
+
+.btn-search {
+    border: none;
+    background-color: var(--BGCOLOR3);
+    color: var(--FGCOLOR2);
+}
+.btn-search:hover {
+    background-color: var(--BGCOLOR3);
+    color: var(--FGCOLOR4);
+}
+
+.bi {
+    font-size: var(--FONTM);
+}
+
+.bi-dot {
+    color: var(--ACTIVE);
+    position: absolute;
+    left: 50px;
+    top: 40px;
+}
+
+.chat-box {
+    background: var(--BGCOLOR2);
+}

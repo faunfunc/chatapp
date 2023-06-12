@@ -95,3 +95,44 @@
 
 
     }
+
+    function emptyInputLogin($email, $pwd) {
+        $result;
+
+        if(empty($email) || empty($pwd)){
+            $result = true;
+        }
+        else {
+            $email = htmlspecialchars($email);
+            $pwd = htmlspecialchars($pwd);
+
+            $result = false;
+            
+        }
+
+        return $result;
+    }
+
+    function LoginUser($conn, $email, $pwd){
+        $EmailExists = EmailExists($conn, $email);
+
+        if($EmailExists === false){
+            header('location: ../login.php?error=invalidcred');
+            exit();
+        }
+
+        $pwdHashed = $EmailExists["pswd"];
+        $checkPwd = password_verify($pwd, $pwdHashed);
+
+        if($checkPwd === false){
+            header('location: ../login.php?error=invalidcred');
+            exit;
+        }
+
+        elseif($checkPwd === true){
+            session_start();
+            $_SESSION['email'] = $EmailExists['email'];
+            header('location: ../chat.php');
+            exit();
+        }
+    }

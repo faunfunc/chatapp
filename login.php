@@ -32,18 +32,31 @@
                             <h1 class="text-center welcome-text">welcome to Convo</h1>
                             <h4 class="mt-2 text-center welcome-text ">register to start a conversation </h4>
                             <div class="reg-details">
-                                <div class="alert alert-warning alert-dismissable fade show">
-                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                                    <strong>Error! </strong>Please enter the required fields.
-                                </div>
-                                <form action="incudes/login.inc.php" method="post">
-                                    <label for="email" class="form-label fw-bold">Email address: </label>
-                                    <input type="email" class="form-control" placeholder="Enter your email">
-                                    <label for="password" class="form-label fw-bold">Password: </label>
-                                    <input type="password" class="form-control" placeholder="Enter an 8-digit password">
-                                    <button type="button" class="btn btn-outline-success mt-4 reg-btn">Login</button>
-                                </form>
-                                <p class="mt-3 text-white">Not yet signed up? Click here to <span><a href="index.php" class="text-info">Register</a></span></p>
+                                <?php
+                                    if (isset($_GET['error'])) {
+                                        if ($_GET['error'] == 'emptyinput') {
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Please enter the required fields.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'invalidcred'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Invalid credentials.
+                                                </div>';
+                                        }
+                                    }
+                                ?>
+                                    <form action="includes/login.inc.php" method="post">
+                                        <label for="email" class="form-label fw-bold">Email address: </label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter your email">
+                                        <label for="password" class="form-label fw-bold">Password: </label>
+                                        <input type="password" class="form-control" name="pwd" placeholder="Enter an 8-digit password">
+                                        <p class="mt-3 text-white"><a href="#">Forgot Password?</a></p>
+                                        <button type="submit" name="login" class="btn btn-outline-success mt-4 reg-btn">Login</button>
+                                    </form>
+                                    <p class="mt-3 text-white">Not yet signed up? Click here to <span><a href="index.php" class="text-info">Register</a></span></p>
                             </div>
                         </div>
                     </div>

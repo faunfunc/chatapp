@@ -32,52 +32,52 @@
                             <h1 class="text-center welcome-text">welcome to Convo</h1>
                             <h4 class="mt-2 text-center welcome-text ">register to start a conversation </h4>
                             <div class="reg-details">
-                            <?php
-    if (isset($_GET['error'])) {
-        if ($_GET['error'] == 'emptyinput') {
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Please enter the required fields.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'invalidemail'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Invalid email format.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'emailexists'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Email already exists.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'Invalidpasswordlength'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Enter an 8-digit password or more.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'Invalidpasswordlength'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Enter an 8-digit password or more.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'stmterror'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Error! </strong>Something went wrong.
-                </div>';
-        }
-        elseif ($_GET['error'] == 'success'){
-            echo '<div class="alert alert-warning alert-dismissable fade show">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    <strong>Signed up successfully.</strong>
-                </div>';
-        }
-    }
-?>
+                                <?php
+                                    if (isset($_GET['error'])) {
+                                        if ($_GET['error'] == 'emptyinput') {
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Please enter the required fields.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'invalidemail'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Invalid email format.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'emailexists'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Email already exists.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'Invalidpasswordlength'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Enter an 8-digit password or more.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'Invalidpasswordlength'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Enter an 8-digit password or more.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'stmterror'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Error! </strong>Something went wrong.
+                                                </div>';
+                                        }
+                                        elseif ($_GET['error'] == 'success'){
+                                            echo '<div class="alert alert-warning alert-dismissable fade show">
+                                                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                                                    <strong>Signed up successfully.</strong>
+                                                </div>';
+                                        }
+                                    }
+                                ?>
 
                                 <form action="includes/signup.inc.php" method="post">
                                     <label for="firstname" class="form-label fw-bold">firstname: </label>
