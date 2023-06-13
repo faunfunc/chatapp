@@ -110,4 +110,27 @@ body {
 
 .chat-box {
     background: var(--BGCOLOR2);
+    justify-content: flex-end;
+}
+
+.user-card-container,
+.chat-card-container {
+    background-color: var(--BGCOLOR1);
+}
+
+.users-card {
+    background: var(--BGCOLOR2);
+}
+
+.users-card-container::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.bi-send-fill {
+    color: var(--FGCOLOR4);
+}
+
+.card-footer {
+    background-color: var(--BGCOLOR2);
 }

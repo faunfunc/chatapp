@@ -132,6 +132,7 @@
         elseif($checkPwd === true){
             session_start();
             $_SESSION['email'] = $EmailExists['email'];
+            $_SESSION['email'] = $EmailExists['id'];
             header('location: ../chat.php');
             exit();
         }

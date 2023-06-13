@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    // session_start();
+    include('includes/dbh.inc.php');
+    include('includes/send.inc.php');
 
     // if(session_unset()){
     //     header('location: index.php');
@@ -17,6 +19,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
     <title>Convo</title>
+
+    <style>
+        .user-card-container {
+            height: 400px;
+            overflow: auto;
+            scrollbar-width: thin;
+        }
+        .chat-card-container {
+            height: 310px;
+            overflow: auto;
+            scrollbar-width: thin;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -53,19 +69,36 @@
                             <h2>users</h2>
                             <h2>chats</h2>
                         </div>
+                        <!-- users -->
                         <div class="col-md-6">
-                            <div class="card shadow mt-4">
-                                <div class="pfp-and-status p-2">
-                                    <img src="./assets/images/avatars/avatar1.jpg" style="width: 40px;" class="rounded-pill pfp" alt="pfp">
+                            <div class="card shadow mt-3 mb-2 user-card-container p-2">
+                                <div class="card users-card shadow mb-1">
+                                    <div class="pfp-and-status p-2">
+                                        <img src="./assets/images/avatars/avatar1.jpg" style="width: 40px;" class="rounded-pill pfp" alt="pfp">
+                                    </div>
                                 </div>
+                                
                             </div>
                         </div>
+                        <!-- chats -->
                         <div class="col-md-6">
-                            <div class="card shadow-sm mt-4 p-1" style="height: 50vh">
-                                <div class="card chat-box w-50 mt-1 mb-1 p-1">
-                                    <h3>hello</h3>
+                            <div class="card shadow-sm mt-3 p-1 chat-card-container">
+                                <div class="card chat-box ms-auto text-start w-50 mt-1 mb-1 p-1">
+                                    <!-- <p>hello</p> -->
+                                    <?php
+                                        while($row = mysqli_fetch_assoc($result)){
+                                            echo "<p>". $row['message'] ."</p>";
+                                        }
+                                    ?>
                                 </div>
                             </div>
+                            <div class="card-footer shadow">
+                                <form action="includes/send.inc.php" method="post" class="d-flex justify-content-between">
+                                    <textarea name="text" rows="2" class="form-control w-75"></textarea>
+                                    <button class="btn border-0" name="text-send"><i class="bi bi-send-fill"></i></button>
+                                </form>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
